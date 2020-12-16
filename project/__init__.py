@@ -30,6 +30,10 @@ def create_app():
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
 
+    # auth routes blueprint
+    from .recipe import recipe as recipe_blueprint
+    app.register_blueprint(recipe_blueprint)
+
     # main routes blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
