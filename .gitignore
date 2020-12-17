@@ -260,8 +260,10 @@ dmypy.json
 # End of https://www.toptal.com/developers/gitignore/api/vscode
 
 
-## My own additions
+## My own additions - why bother with the generated stuff?
 .idea/*
+.vscode/*
 
 # app specific
 project/db.sqlite
+instance/

@@ -5,14 +5,38 @@
 
 <h1 class="title">Create a Recipe!</h1>
 
-<h2>{{ form.name.label }}</h2>
-{{ form.name }}
+<form method="POST" action="/create-recipe">
+    {{ form.hidden_tag() }}
 
-<h3>Description</h3>
-<h4>{{form.ingredients.label }}</h4>
-{{ form.ingredients }}
-<h5>Directions</h5>
-<h6>Notes</h6>
+    <h1>{{ form.name.label }}</h1>
+    {{ form.name(size=100, placeholder='(type a short description)') }}
+    {% if form.name.errors %}
+        <ul class="errors">
+          {% for error in form.name.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+    <h1>{{ form.description.label }}</h1>
+    {{ form.description(placeholder='(type a short description)') }}
+
+    <fieldset>
+    <legend>Ingredients</legend>
+        <h1>{{form.ingredients.label }}</h1>
+        {{ form.ingredients(placeholder='ex: 1 1/4 cup salt or 2.5 ml water') }}
+    </fieldset>
+
+    <h1>{{ form.directions.label }}</h1>
+    {{ form.directions(placeholder='ex: 1. Place food in oven and cook for 1hr \n2. eat it') }}
+
+    <h1>{{ form.notes.label }}</h1>
+    {{ form.notes(placeholder='ex: Don\'t over cook the beef') }}
+
+<br>
+    {{ form.save() }}
+    {{ form.cancel() }}
+</form>
 
 </div>
 
