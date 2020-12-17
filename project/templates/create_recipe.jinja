@@ -3,34 +3,17 @@
 
 <div class="container has-text-left">
 
-<h1 class="title">
-    Create a Recipe!
-</h1>
+<h1 class="title">Create a Recipe!</h1>
 
-<h2>Title 1</h2>
+<h2>{{ form.name.label }}</h2>
+{{ form.name }}
+
 <h3>Description</h3>
-<h4>Ingredients</h4>
+<h4>{{form.ingredients.label }}</h4>
+{{ form.ingredients }}
 <h5>Directions</h5>
 <h6>Notes</h6>
 
-</div>
-
-<div class="card">
-  <div class="card-content">
-    <p class="title">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto,
-      corrupti.
-    </p>
-    <p class="subtitle">Lorem Ipsum.</p>
-  </div>
-  <footer class="card-footer">
-    <p class="card-footer-item">
-      <span>Footer-Left</span>
-    </p>
-    <p class="card-footer-item">
-      <span>Footer-Right</span>
-    </p>
-  </footer>
 </div>
 
 {% endblock %}
