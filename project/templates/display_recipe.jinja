@@ -1,0 +1,31 @@
+{% extends "base.html.j2" %} 
+{% block content %}
+
+<div class="container has-text-left is-align-content-start">
+
+<h1 class="title">{{ form.name.data }}</h1>
+
+<br>
+
+<fieldset style="width:50px">
+    <legend>Ingredients</legend>
+    {{ form.ingredients.data }}
+</fieldset>
+
+<br>
+
+<fieldset style="width:50em">
+    <legend>Directions</legend>
+    {{ form.directions.data }}
+</fieldset>
+
+<br>
+
+<fieldset style="width:50rem">
+    <legend>Notes</legend>
+    {{ form.notes.data }}
+</fieldset>
+
+</div>
+
+{% endblock %}

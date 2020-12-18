@@ -9,29 +9,25 @@
     {{ form.hidden_tag() }}
 
     <h1>{{ form.name.label }}</h1>
-    {{ form.name(size=100, placeholder='(type a short description)') }}
-    {% if form.name.errors %}
-        <ul class="errors">
-          {% for error in form.name.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
+    {{ form.name(size=50, placeholder='(type a short description)') }}
 
     <h1>{{ form.description.label }}</h1>
-    {{ form.description(placeholder='(type a short description)') }}
+    {{ form.description(size=50, placeholder='(type a short description)') }}
 
-    <fieldset>
-    <legend>Ingredients</legend>
-        <h1>{{form.ingredients.label }}</h1>
-        {{ form.ingredients(placeholder='ex: 1 1/4 cup salt or 2.5 ml water') }}
-    </fieldset>
+<br>
+
+    <h1>{{form.ingredients.label }}</h1>
+    {{ form.ingredients(rows=20, cols=50, placeholder='ex:\n1 1/4 cup salt or 2.5 ml water') }}
+
+<br>
 
     <h1>{{ form.directions.label }}</h1>
-    {{ form.directions(placeholder='ex: 1. Place food in oven and cook for 1hr \n2. eat it') }}
+    {{ form.directions(rows=20, cols=50, placeholder='ex:\n1. Place food in oven and cook for 1hr \n2. eat it') }}
+
+<br>
 
     <h1>{{ form.notes.label }}</h1>
-    {{ form.notes(placeholder='ex: Don\'t over cook the beef') }}
+    {{ form.notes(rows=10, cols=50, placeholder='ex: Don\'t over cook the beef') }}
 
 <br>
     {{ form.save() }}

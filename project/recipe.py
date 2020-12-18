@@ -18,11 +18,12 @@ def create_recipe_post():
     form = RecipeForm(request.form)
 
     # read form, create recipe DB object, add it and get id
-    name = form.get('name')
-    description = form.get('description')
-    ingredients = form.get('ingredients')
-    directions = form.get('directions')
-    notes = form.get('notes')
+    
+    name = form.name.data
+    description = form.description.data
+    ingredients = form.ingredients.data
+    directions = form.directions.data
+    notes = form.notes.data
 
     # current_user = User object
     #print(current_user.name)
@@ -39,4 +40,9 @@ def create_recipe_post():
 
 @recipe.route('/recipe/<id>')
 def browse_recipe(id):
-    return(id)
+    recipe = Recipe.query.filter_by(id=id).first()
+    if recipe == None:
+        return("Recipe not found")
+
+    form = RecipeForm(obj=recipe)
+    return render_template('display_recipe.jinja', form=form)
