@@ -1,29 +1,38 @@
 {% extends "base.html.j2" %} 
 {% block content %}
 
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
 <div class="container has-text-left is-align-content-start">
 
-<h1 class="title">{{ form.name.data }}</h1>
-
-<br>
-
-<fieldset style="width:50px">
-    <legend>Ingredients</legend>
-    {{ form.ingredients.data }}
-</fieldset>
+<h1 class="title is-large" >{{ form.name.data }}</h1>
 
 <br>
 
 <fieldset style="width:50em">
+    <legend>Ingredients</legend>
+    <div class="mylist">
+        {{ form.ingredients.data }}
+    </div>
+</fieldset>
+
+<br>
+
+<fieldset style="width:50rem">
     <legend>Directions</legend>
-    {{ form.directions.data }}
+    <div class="mylist">
+        {{ form.directions.data }}
+    </div>
 </fieldset>
 
 <br>
 
 <fieldset style="width:50rem">
     <legend>Notes</legend>
-    {{ form.notes.data }}
+    <div class="mylist">
+        {{ form.notes.data }}
+    </div>
 </fieldset>
 
 </div>
